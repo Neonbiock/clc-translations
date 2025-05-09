@@ -86,13 +86,14 @@
     const stageNames = {
       stage1: "Stage 1: Caecilius",
       stage2: "Stage 2: in villa",
+      stage3: "Stage 3: negotium",
       stage13: "Stage 13: Coniuratio",
       stage21: "Stage 21: Thermopolium",
       // Add more here...
     };
 
     const bookStages = {
-      book1: ["stage1", "stage2"], // up to stage12
+      book1: ["stage1", "stage2", "stage3"], // up to stage12
       book2: ["stage13", "stage14"], // up to stage20
       book3: ["stage21", "stage22"], // up to stage28
       book4: [], // unreleased
@@ -103,7 +104,8 @@
       mercator: "mercator",
       intriclinio: "in triclinio",
       inculina: "in culina",
-      thermopolium: "Thermopolium",
+      inforo: "in foro",
+      artifex: "artifex",
   // Add more...
 };
     const translatedTitles = {
@@ -111,7 +113,8 @@
   mercator: "The Merchant",
   intriclinio: "In The Dining Room",
   inculina: "In The Kitchen",
-  thermopolium: "The Snack Shop",
+  inforo: "In The Forum",
+  artifex: "artifex",
   // Add more here
 };
 
@@ -131,13 +134,22 @@
         },
         intriclinio: {
           latin: "Grumio triclinium intrat. Grumio pavonem portat. Clemens triclinium intrat.\nClemens vinum portat. Caecilius pavonem gustat.\n\n'pavo est optimus!' Caecilius clamat.\nmercator quoque pavonem gustat. cena Barbillum delectat.\ndominus coquum laudat. Grumio exit.\nancilla intrat. ancilla est Poppaea. Poppaea suaviter cantat.\ndominus Poppaeam audit et vinum bibit. mox dominus dormit.\namicus quoque dormit.\n\nGrumio triclinium intrat et circumspectat. coquus cibum in mensa videt.\nGrumio cibum consumit et vinum bibit. Caecilius Grumionem non vidit.\ncoquus in triclinio magnifice cenat.\n\nPoppaea coquum spectat. coquus ancillam vocat. Poppaea cibum gustat et Grumionem laudat.\nGrumio est laetissimus.",
-          english: "Grumio enters the dining room. Grumio carries the peacock. Clemens enters the dining room.\nClemens carries the wine. Caecilius tastes the peacock.\n\n'The peacock is excellent!' Caecilius shouts.\nThe merchant also tastes the peacock. The dinner pleases Barbillus.\nThe master praises the cook. Grumio leaves.\nA slave girl enters. The slave girl is Poppaea. Poppaea sings sweetly.\nThe master hears Poppaea and drinks wine. Soon the master sleeps.\nThe friend also sleeps.\n\nGrumio enters the dining room and looks around. The cook sees food on the table.\nGrumio consumes the food and drinks the wine. Caecilius does not see Grumio.\nThe cook dines magnificently in the dining room.\n\nPoppaea looks at the cook. The cook calls the slave girl.\nPoppaea tastes the food and praises Grumio.\nGrumio is very happy."
+          english: "Grumio enters the dining room. Grumio carries the peacock. Clemens enters the dining room.\nClemens carries the wine. Caecilius tastes the peacock.\n\n'The peacock is excellent!' Caecilius shouts.\nThe merchant also tastes the peacock. The dinner pleases Barbillus.\nThe master praises the cook. Grumio leaves.\nA slave girl enters. The slave girl is Poppaea. Poppaea sings sweetly.\nThe master hears Poppaea and drinks wine. Soon the master sleeps.\nThe friend also sleeps.\n\nGrumio enters the dining room and looks around. The cook sees food on the table.\nGrumio consumes the food and drinks the wine. Caecilius does not see Grumio.\nThe cook dines magnificently in the dining room.\n\nPoppaea looks at the cook. The cook calls the slave girl. Poppaea tastes the food and praises Grumio.\nGrumio is very happy."
         },
         inculina: {
           latin: "amicus Grumionem visitat. amicus est Corvus.\namicus villam intrat. Clemens est in atrio. Corvus Clementem videt.\nClemens Corvum salutat. amicus culinam intrat.\namicus culinam circumspectat.\n\nGrumio non est in culina. Corvus cibum videt. cibus est paratus!\n\nCorvus cibum gustat. cibus est optimus.\nGrumio culinam intrat. Grumio amicum videt. amicus cibum consumit!\ncoquus est iratus.\n\n'pestis! furcifer!' coquus clamat. coquus amicum vituperat.",
           english: "A friend visits Grumio. The friend is Corvus.\nThe friend enters the house. Clements is in the atrium. Corvus sees Clemens.\nClemens greets Corvus. The friend enters the kitchen.\nThe friend looks around the kitchen.\n\nGrumio is not in the kitchen. Corvus sees the food. The food is ready!\n\nCorvus tastes the food. The food is excellent.\nGrumio enters the kitchen. Grumio sees the friend. The friend consumes the food!\nThe cook is angry.\n\n'Pest! Scoundrel' the cook shouts. The cook scolds the friend.",
         }
       },
+      stage3: {
+        inforo: {
+          latin: "Caecilius non est in villa. Caecilius in foro negotium agit.\nCaecilius est argentarius. argentarius pecuniam numerat.\nCaecilius forum circumspectat. ecce! artifex in foro ambulat.\nartifex est Clara. Clara Caecilium salutat.\n\necce! tonsor quoque est in foro. tonsor est Pantagathus.\nCaecilius tonsorem videt.\n\n'salve!' Caecilius tonsorem salutat.\n'salve!' Pantagathus respondet.\n\necce! venalicius forum intrat. venalicius est Syphax.\nvenalicius mercatorem exspectat. mercator non venit.\nSyphax est iratus. Syphax mercatorem vituperat.",
+          english: "Caecilius is not in the house. Caecilius is doing business in the forum.\nCaecilius is a banker. The banker counts money.\nCaecilius looks around the forum. Look! An artist walks in the forum.\nThe artist is Clara. Clara greets Caecilius.\n\nLook! A barber is also in the forum. The barber is Pantagathus.\nCaecilius sees the barber.\n\n'Hello!' Caecilius greets the barber.\n'Hello!' Pantagathus replies.\n\nLook! A slave dealer enters the forum. The slave dealer is Syphax.\nThe slave dealer is waiting for the merchant. The merchant does not come.\nSyphax is angry. Syphax scolds the merchant.",
+      },
+        artifex: {
+          latin: "artifex ad villam ambulat. artifex est Clara. Clara ianuam pulsat.\nClemens artificem non audit. servus est in horto.\nClara clamat. canis Claram audit et latrat. Quintus canem audit.\nQuintus ad ianuam venit. filius ianuam aperit. Clara Quintum salutat et villam intrat.\n\nMetella est in culina. Quintus matrem vocat. Metella atrium intrat.\nartifex Metellam salutat. Metella artificem ad triclinium ducit.\n\nClara in triclinio laborat. Clara picturam pingit. magnus leo est in pictura.\nHercules quoque est in pictura. leo Herculem ferociter petit.\nHercules magnum fustem tenet et leonem verberat.\nHercules est fortis.\n\nCaecilius ad villam revenit et triclinium intrat. Caecilius filiam vocat.\nfilia ad triclinium venit. Lucia picturam intente spectat et artificem laudat.",
+          english: "",
+        },
       stage13: {
         coniuratio: {
           latin: "Salvius servos inspicit.",
