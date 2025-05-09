@@ -85,7 +85,7 @@
 
     const stageNames = {
       stage1: "Stage 1: Caecilius",
-      stage2: "Stage 2: in triclinio",
+      stage2: "Stage 2: in villa",
       stage13: "Stage 13: Coniuratio",
       stage21: "Stage 21: Thermopolium",
       // Add more here...
@@ -106,6 +106,15 @@
       thermopolium: "Thermopolium",
   // Add more...
 };
+    const translatedTitles = {
+  cerberus: "Cerberus",             // stays the same
+  inTablino: "In the Study",
+  amicus: "The Friend",
+  coniuratio: "The Plot",
+  thermopolium: "The Snack Shop",
+  // Add more here
+};
+
 
 
     const storyData = {
@@ -176,19 +185,24 @@ function updateStories() {
   }
 }
 
-    function showTranslation() {
-      const stage = document.getElementById('stage').value;
-      const story = document.getElementById('story').value;
-      const data = storyData[stage]?.[story];
+  function showTranslation() {
+  const stage = document.getElementById('stage').value;
+  const story = document.getElementById('story').value;
+  const data = storyData[stage]?.[story];
+  const latinTitle = storyTitles[story] || story;
+  const englishTitle = translatedTitles[story] || latinTitle;
 
-      if (!data) {
-        document.getElementById('translation').innerText = "Translation not found.";
-        return;
-      }
+  if (!data) {
+    document.getElementById('translation').innerText = "Translation not found.";
+    return;
+  }
 
-      document.getElementById('translation').innerHTML =
-        `<strong>LATIN</strong>\n${data.latin}\n<hr><strong>ENGLISH</strong>\n${data.english}`;
-    }
+  document.getElementById('translation').innerHTML =
+    `<strong>${latinTitle}</strong><br><br>` +
+    `<strong>LATIN</strong><br>${data.latin.replace(/\n/g, "<br>")}` +
+    `<hr><strong>ENGLISH: ${englishTitle}</strong><br>${data.english.replace(/\n/g, "<br>")}`;
+}
+
   </script>
 
 </body>
