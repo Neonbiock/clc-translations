@@ -4,55 +4,163 @@
   <meta charset="UTF-8">
   <title>CLC Latin Translations</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
-    h1 { text-align: center; }
-    select, button { padding: 10px; margin: 10px 0; }
-    #translation { background: white; padding: 15px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    .color-banner {
+      width: 100%;
+      height: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    select, button {
+      padding: 10px;
+      margin: 10px 0;
+      width: 100%;
+      max-width: 500px;
+    }
+    #translation {
+      background: white;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 20px;
+      white-space: pre-wrap;
+    }
+    .container {
+      max-width: 700px;
+      margin: auto;
+    }
+    hr {
+      margin: 20px 0;
+    }
   </style>
 </head>
 <body>
 
-  <h1>CLC Latin Story Translations</h1>
+  <div class="container">
+    <h1>CLC Latin Story Translations</h1>
 
-  <label for="stage">Choose a Stage:</label>
-  <select id="stage" onchange="updateStories()">
-    <option value="">-- Select Stage --</option>
-    <option value="stage1">Stage 1</option>
-    <option value="stage2">Stage 2</option>
-    <!-- Add more stages here -->
-  </select>
+    <div id="bookBanner" class="color-banner"></div>
 
-  <label for="story">Choose a Story:</label>
-  <select id="story">
-    <option value="">-- Select Story --</option>
-  </select>
+    <!-- Book Selector -->
+    <label for="book">Choose a Book:</label>
+    <select id="book" onchange="updateBookColor(); updateStages();">
+      <option value="">-- Select Book --</option>
+      <option value="book1">Book I</option>
+      <option value="book2">Book II</option>
+      <option value="book3">Book III</option>
+      <option value="book4">Book IV</option>
+    </select>
 
-  <button onclick="showTranslation()">Show Translation</button>
+    <!-- Stage Selector -->
+    <label for="stage">Choose a Stage:</label>
+    <select id="stage" onchange="updateStories()">
+      <option value="">-- Select Stage --</option>
+    </select>
 
-  <div id="translation"></div>
+    <!-- Story Selector -->
+    <label for="story">Choose a Story:</label>
+    <select id="story">
+      <option value="">-- Select Story --</option>
+    </select>
+
+    <button onclick="showTranslation()">Show Translation</button>
+
+    <div id="translation"></div>
+  </div>
 
   <script>
+    const bookColors = {
+      book1: "#c62828", // red
+      book2: "#1565c0", // blue
+      book3: "#2e7d32", // green
+      book4: "#6a1b9a", // purple
+    };
+
+    const stageNames = {
+      stage1: "Stage 1: Caecilius",
+      stage2: "Stage 2: in triclinio",
+      stage13: "Stage 13: Coniuratio",
+      stage21: "Stage 21: Thermopolium",
+      // Add more here...
+    };
+
+    const bookStages = {
+      book1: ["stage1", "stage2"], // up to stage12
+      book2: ["stage13", "stage14"], // up to stage20
+      book3: ["stage21", "stage22"], // up to stage28
+      book4: [], // unreleased
+    };
+
     const storyData = {
       stage1: {
-        cerberus: "Cerberus was in the street. The dog barked.",
-        inTablino: "Caecilius was in the study. He was writing.",
+        cerberus: {
+          latin: "Caecilius est in horto.\nCerberus in via latrat.",
+          english: "Caecilius is in the garden.\nCerberus is barking in the street."
+        },
+        inTablino: {
+          latin: "Caecilius in tablino scribit.",
+          english: "Caecilius is writing in the study."
+        }
       },
       stage2: {
-        amicus: "The friend greeted Caecilius.",
-        mercator: "The merchant entered the house.",
+        amicus: {
+          latin: "Amicus villam intrat.",
+          english: "The friend enters the house."
+        }
       },
+      stage13: {
+        coniuratio: {
+          latin: "Salvius servos inspicit.",
+          english: "Salvius inspects the slaves."
+        }
+      },
+      stage21: {
+        thermopolium: {
+          latin: "Clemens ad thermopolium ambulavit.",
+          english: "Clemens walked to the snack shop."
+        }
+      }
     };
+
+    function updateBookColor() {
+      const book = document.getElementById('book').value;
+      const banner = document.getElementById('bookBanner');
+      banner.style.backgroundColor = bookColors[book] || '#f4f4f4';
+    }
+
+    function updateStages() {
+      const book = document.getElementById('book').value;
+      const stageSelect = document.getElementById('stage');
+      stageSelect.innerHTML = '<option value="">-- Select Stage --</option>';
+
+      if (bookStages[book]) {
+        bookStages[book].forEach(stage => {
+          const option = document.createElement('option');
+          option.value = stage;
+          option.text = stageNames[stage] || stage;
+          stageSelect.appendChild(option);
+        });
+      }
+      updateStories(); // Clear stories if switching book
+    }
 
     function updateStories() {
       const stage = document.getElementById('stage').value;
       const storySelect = document.getElementById('story');
       storySelect.innerHTML = '<option value="">-- Select Story --</option>';
 
-      if (stage && storyData[stage]) {
-        for (let key in storyData[stage]) {
+      if (storyData[stage]) {
+        for (let story in storyData[stage]) {
           const option = document.createElement('option');
-          option.value = key;
-          option.text = key.replace(/([A-Z])/g, ' $1').toLowerCase();
+          option.value = story;
+          option.text = story.replace(/([A-Z])/g, ' $1').toLowerCase();
           storySelect.appendChild(option);
         }
       }
@@ -61,8 +169,15 @@
     function showTranslation() {
       const stage = document.getElementById('stage').value;
       const story = document.getElementById('story').value;
-      const translation = storyData[stage]?.[story] || 'Translation not found.';
-      document.getElementById('translation').innerText = translation;
+      const data = storyData[stage]?.[story];
+
+      if (!data) {
+        document.getElementById('translation').innerText = "Translation not found.";
+        return;
+      }
+
+      document.getElementById('translation').innerHTML =
+        `<strong>LATIN</strong>\n${data.latin}\n<hr><strong>ENGLISH</strong>\n${data.english}`;
     }
   </script>
 
