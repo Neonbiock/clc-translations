@@ -198,10 +198,12 @@ function updateStories() {
   }
 
   document.getElementById('translation').innerHTML =
-    `<strong>${latinTitle}</strong><br><br>` +
-    `<strong>LATIN</strong><br>${data.latin.replace(/\n/g, "<br>")}` +
-    `<hr><strong>ENGLISH: ${englishTitle}</strong><br>${data.english.replace(/\n/g, "<br>")}`;
+    `<strong>LATIN</strong><br><strong>${latinTitle}</strong><br><br>` +
+    `${data.latin.replace(/\n/g, "<br>")}` +
+    `<hr><strong>ENGLISH</strong><br><strong>${englishTitle}</strong><br><br>` +
+    `${data.english.replace(/\n/g, "<br>")}`;
 }
+
 
   </script>
 
