@@ -98,6 +98,16 @@
       book4: [], // unreleased
     };
 
+    const storyTitles = {
+      cerberus: "Cerberus",
+      inTablino: "In Tablino",
+      amicus: "Amicus",
+      coniuratio: "Coniuratio",
+      thermopolium: "Thermopolium",
+  // Add more...
+};
+
+
     const storyData = {
       stage1: {
         Cerberus: {
@@ -151,20 +161,20 @@
       updateStories(); // Clear stories if switching book
     }
 
-    function updateStories() {
-      const stage = document.getElementById('stage').value;
-      const storySelect = document.getElementById('story');
-      storySelect.innerHTML = '<option value="">-- Select Story --</option>';
+function updateStories() {
+  const stage = document.getElementById('stage').value;
+  const storySelect = document.getElementById('story');
+  storySelect.innerHTML = '<option value="">-- Select Story --</option>';
 
-      if (storyData[stage]) {
-        for (let story in storyData[stage]) {
-          const option = document.createElement('option');
-          option.value = story;
-          option.text = story.replace(/([A-Z])/g, ' $1').toLowerCase();
-          storySelect.appendChild(option);
-        }
-      }
+  if (storyData[stage]) {
+    for (let story in storyData[stage]) {
+      const option = document.createElement('option');
+      option.value = story;
+      option.text = storyTitles[story] || story; // ✅ Proper name
+      storySelect.appendChild(option);
     }
+  }
+}
 
     function showTranslation() {
       const stage = document.getElementById('stage').value;
