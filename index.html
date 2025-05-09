@@ -181,6 +181,9 @@ function updateStories() {
       option.value = story;
       option.text = storyTitles[story] || story; // ✅ Proper name
       storySelect.appendChild(option);
+
+      console.log("Loading stage:", stage);
+      console.log("Stories found:", Object.keys(storyData[stage] || {}));
     }
   }
 }
@@ -203,6 +206,14 @@ function updateStories() {
     `<hr><strong>ENGLISH</strong><br><strong>${englishTitle}</strong><br><br>` +
     `${data.english.replace(/\n/g, "<br>")}`;
 }
+    if (stories[story]) {
+  const item = document.createElement("li");
+  item.innerHTML = `<strong>${story}</strong>: ${stories[story].latin}`;
+  storyList.appendChild(item);
+} else {
+  console.warn("Story is undefined:", story);
+}
+
 
 
   </script>
