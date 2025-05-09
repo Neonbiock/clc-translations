@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CLC Latin Translations</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+    h1 { text-align: center; }
+    select, button { padding: 10px; margin: 10px 0; }
+    #translation { background: white; padding: 15px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+
+  <h1>CLC Latin Story Translations</h1>
+
+  <label for="stage">Choose a Stage:</label>
+  <select id="stage" onchange="updateStories()">
+    <option value="">-- Select Stage --</option>
+    <option value="stage1">Stage 1</option>
+    <option value="stage2">Stage 2</option>
+    <!-- Add more stages here -->
+  </select>
+
+  <label for="story">Choose a Story:</label>
+  <select id="story">
+    <option value="">-- Select Story --</option>
+  </select>
+
+  <button onclick="showTranslation()">Show Translation</button>
+
+  <div id="translation"></div>
+
+  <script>
+    const storyData = {
+      stage1: {
+        cerberus: "Cerberus was in the street. The dog barked.",
+        inTablino: "Caecilius was in the study. He was writing.",
+      },
+      stage2: {
+        amicus: "The friend greeted Caecilius.",
+        mercator: "The merchant entered the house.",
+      },
+    };
+
+    function updateStories() {
+      const stage = document.getElementById('stage').value;
+      const storySelect = document.getElementById('story');
+      storySelect.innerHTML = '<option value="">-- Select Story --</option>';
+
+      if (stage && storyData[stage]) {
+        for (let key in storyData[stage]) {
+          const option = document.createElement('option');
+          option.value = key;
+          option.text = key.replace(/([A-Z])/g, ' $1').toLowerCase();
+          storySelect.appendChild(option);
+        }
+      }
+    }
+
+    function showTranslation() {
+      const stage = document.getElementById('stage').value;
+      const story = document.getElementById('story').value;
+      const translation = storyData[stage]?.[story] || 'Translation not found.';
+      document.getElementById('translation').innerText = translation;
+    }
+  </script>
+
+</body>
+</html>
