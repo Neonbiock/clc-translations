@@ -87,13 +87,14 @@
       stage1: "Stage 1: Caecilius",
       stage2: "Stage 2: in villa",
       stage3: "Stage 3: negotium",
+      stage4: "Stage 4: in foro",
       stage13: "Stage 13: Coniuratio",
       stage21: "Stage 21: Thermopolium",
       // Add more here...
     };
 
     const bookStages = {
-      book1: ["stage1", "stage2", "stage3"], // up to stage12
+      book1: ["stage1", "stage2", "stage3", "stage4",], // up to stage12
       book2: ["stage13", "stage14"], // up to stage20
       book3: ["stage21", "stage22"], // up to stage28
       book4: [], // unreleased
@@ -109,6 +110,9 @@
       tonsor: "tonsor",
       ornatrix: "ornatrix",
       inhorto: "in horto",
+      Hermogenes: "Hermogenes",
+      inbasilica: "in basilica",
+      Grumioetleo: "Grumio et leo",
   // Add more...
 };
     const translatedTitles = {
@@ -121,6 +125,9 @@
       tonsor: "The Barber",
       ornatrix: "The Hairdresser",
       inhorto: "In The Garden",
+      Hermogenes: "Hermogenes",
+      inbasilica: "In The Law Court",
+      Grumioetleo: "Grumio And The Lion",
   // Add more here
 };
 
@@ -167,6 +174,20 @@
         inhorto: {
           latin: "Lucia est in horto. Lucia fabulam recitat.\n\nMetella in horto sedet et filiam audit. Melissa in horto laborat.\nMelissa quoque Luciam audit. Caecilius hortum intrat et circumspectat.\necce! canis ad culinam ambulat.\n\n'Hercules ad Orcum venit.' inquit Lucia. 'magnus canis ianuam in Orco custodit.\nHercules magnum canem capit.\ncanis ferociter latrat.'\n\nsubito Grumio hortum intrat. Grumio Cerberum e culina ducit.\ncanis latrat. coquus non est laetus.\n\nLucia Grumionem spectat. 'Hercules est in horto!'\nclamat Lucia. Metella filiam laudat. Melissa ridet.",
           english: "Lucia is in the garden. Lucia recites a story.\n\nMetella sits in the garden and listens to her daughter. Melissa works in the garden.\nMelissa also listens to Lucia. Caecilius enters the garden and looks around.\nLook! The dog walks toward the kitchen.\n\n'Hercules came to the Underworld,' says Lucia. 'A great dog guards the gatee in the Underworld.\nHercules seizes the great dog.\nThe dog barks fiercely.'\n\nSuddenly Grumio enters the garden. Grumio leads Cerberus out of the kitchen.\nThe dog barks. The cook is not happy.\n\nLucia looks at Grumio. 'Hercules is in the garden!'\nLucia shouts. Metella praises her daughter. Melissa laughs.",
+        }
+      },
+      stage4: {
+        Hermogenes: {
+        latin: "Caecilius est in foro. Caecilius in foro argentariam habet.\nHermogenes ad forum venit. Hermogenes est mercator Graecus.\nmercator navem habet. mercator Caecilium salutat.\n\n'ego sum mercator Graecus.' inquit Hermogenes. 'ego sum mercator probus.\nego pecuniam quaero.'\n\n'cur tu pecuniam quaeris?' inquit Caecilius. 'tu navem habes.'\n\n'sed navis non adest.' respondet Hermogenes. 'navis est in Graecia.\nego pecuniam non habeo. ego tamen sum probus.\nego semper pecuniam reddo.'\n\n'ecce!' inquit Caecilius. 'ego ceram habeo. tu anulum habes?'\n\n'ego anulum habeo.' respondet Hermogenes. 'anulus signum habet.\necce! ego signum in cera imprimo.'\n\nCaecilius pecuniam tradit. mercator pecuniam capit et e foro currit.\n\neheu! Hermogenes non revenit. mercator pecuniam non reddit.\n\nCaecilius Hermogenem ad basilicam vocat. ",
+        english: "Caecilius is in the forum. Caecilius has a banker's stall in the forum.\nHermogenes comes to the forum. Hermogenes is a Greek merchant.\nThe merchant has a ship. The merchant greets Caecilius.\n\n'I am a Greek merchant,' says Hermogenes. 'I am an honest merchant.\nI am looking for money.'\n\n'Why are you looking for money?' says Caecilius. 'You have a ship.'\n\n'But the ship is not here,' replies Hermogenes. 'The ship is in Greece.\nI do not have money. Nevertheless, I am honest.\nI always repay money.\n\n'Look!' says Caecilius. 'I have a tablet. Do you have a ring?'\n\n'I have a ring,' replies Hermogenes. 'The ring has a seal.\nLook! I press the seal into the wax.'\n\nCaecilius hands over the money. The merchant takes the money and runs from the forum.\n\nOh no! Hermogenes does not return. The merchant does not repay the money.\n\nCaecilius calls Hermogenes to the law court.",
+      },
+        inbasilica: {
+          latin: "iudex basilicam intrat.\n\niudex: quis es tu?\n\nCaecilius: ego sum Lucius Caecilius Iucundus.\n\niudex: tu es Pompeianus?\n\nCaecilius: ego sum Pompeianus.\n\niudex: quid tu in urbe agis?\n\nCaecilius: ego cotidie ad forum venio. ego sum argentarius.\n\niudex: cur tu hodie ad basilicam venis?\n\nCaecilius: Hermogenes multam pecuniam debet.\nHermogenes pecuniam non reddit.\n\nHermogenes: Caecilius est mendax!\n\niudex: quis es tu?\n\nHermogenes: ego sum Hermogenes.\n\niudex: Hermogenes, quid tu in urbe agis?\n\nHermogenes: ego in foro negotium ago. ego sum mercator.\n\niudex: quid tu respondes? tu pecuniam debes?\n\nHermogenes: ego pecuniam non debeo. amicus meus est testis.\n\namicus: ego sum testis. Hermogenes pecuniam non debet.\nCaecilius est mendax.\n\nCaecilius: tu, Hermogenes, es mendax. amicus tuus quoque est mendax.\ntu pecuniam non reddis...\n\niudex: satis! tu Hermogenem accusas, sed tu rem non probas.\n\nCaecilius: ego ceram habeo. tu signum in cera vides.\n\nHermogenes: eheu!\n\niudex: Hermogenes, tu anulum habes?\n\nCaecilius: ecce! Hermogenes anulum celat.\n\niudex: ubi est anulus? ecce! anulus rem probat. ego Hermogenem convinco.",
+          english: "The judge enters the law court.\n\nJudge: Who are you?\n\nCaecilius: I am Lucius Caecilius Iucundus.\n\nJudge: Are you a Pompeian?\n\nCaecilius: I am a Pompeian.\n\nJudge: What do you do in the city?\n\nCaecilius: I come to the forum every day. I am a banker.\n\nJudge: Who do you come to the law court today?\n\nCaecilius: Hermogenes owes a lot of money.\nHermogenes does not repay the money.\n\nHermogenes: Caecilius is lying!\n\nJudge: Who are you?\n\nHermogenes: I am Hermogenes.\n\nJudge: Hermogenes, what do you do in the city?\n\nHermogenes: I do business in the forum. I am a merchant.\n\nJudge: What do you say in response? Do you owe money?\n\nHermogenes: I do not owe money. My friend is a witness.\n\nFriend: I am a witness. Hermogenes does not owe money.\nCaecilius is lying.\n\nCaecilius: You, Hermogenes, are lying. Your friend is also lying.\nYou do not repay the money...\n\nJudge: Enough! You accuse Hermogenes, but you do not prove the case.\n\nCaecilius: I have the wax tablet. You see the seal in the wax.\n\nHermogenes: Oh no!\n\nJudge: Hermogenes, do you have a ring?\n\nCaecilius: Look! Hermogenes is hiding the ring.\n\nJudge: Where is the ring? Look! The ring proves the case.\nI find Hermogenes guilty.",
+        },
+        Grumioetleo: {
+          latin: "Melissa in triclinio stat. Melissa Herculem in pictura spectat.\nancilla ridet et Grumionem vocat. Grumio triclinium intrat.\n\n'ecce!' inquit Melissa. 'tu es in pictura! magnus leo te ferociter petit.\nsed tu es fortis. tu leonem verberas.'\n\nClemens triclinium intrat.\n'ecce!' inquit coquus. 'quis est in pictura?'\nClemens non respondet.\n'tu linguam habes?' inquit Grumio. 'ego sum in pictura!\nleo me petit. ego fustem teneo et leonem verbero.'\n\n'quid tu dicis?' respondet Clemens. 'tu es in pictura?\ntu es coquus magnificus, Grumio. sed ego te in pictura non video.'",
+          english: "Melissa stands in the dining room. Melissa looks at Hercules in the picture.\nThe slave girl laughs and calls Grumio. Grumio enters the dining room.\n\n'Look!' says Melissa. 'You are in the picture! A great lion attacks you fiercely.\nBut you are brave. You strike the lion.'\n\nClemens enters the dining room.\n'Look!' says the cook. 'Who is in the picture?'\nClemens does not respond.\n'Do you have a tongue?' says Grumio. 'I am in the picture!\nThe lion attacks me. I hold a club and strike the lion.'\n\n'What are you saying?' replies Clemens. 'You are in the picture?\nYou are a magnificent cook, Grumio. But I do not see you in the picture.",
         }
       },
       stage13: {
