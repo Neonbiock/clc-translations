@@ -89,13 +89,14 @@
       stage3: "Stage 3: negotium",
       stage4: "Stage 4: in foro",
       stage5: "Stage 5: in theatro",
+      stage6: "Stage 6: Felix",
       stage13: "Stage 13: Coniuratio",
       stage21: "Stage 21: Thermopolium",
       // Add more here...
     };
 
     const bookStages = {
-      book1: ["stage1", "stage2", "stage3", "stage4", "stage5",], // up to stage12
+      book1: ["stage1", "stage2", "stage3", "stage4", "stage5", "stage6",], // up to stage12
       book2: ["stage13", "stage14"], // up to stage20
       book3: ["stage21", "stage22"], // up to stage28
       book4: [], // unreleased
@@ -117,6 +118,10 @@
       actores: "actores",
       Poppaea: "Poppaea",
       intheatro: "in theatro",
+      pugna: "pugna",
+      Felix: "Felix",
+      Felixetfur: "Felix et fur",
+      avarus: "avarus",
   // Add more...
 };
     const translatedTitles = {
@@ -135,6 +140,10 @@
       actores: "The Actors",
       Poppaea: "Poppaea",
       intheatro: "In The Theatre",
+      pugna: "The Fight",
+      Felix: "Felix",
+      Felixetfur: "Felix And The Thief",
+      avarus: "The Miser",
   // Add more here
 };
 
@@ -209,6 +218,24 @@
         intheatro: {
           latin: "hodie Pompeiani sunt otiosi. multi Pompeiani in theatro sedent.\nspectatores clamorem non faciunt.\nspecatores Actium exspectant. euge! tandem Actius in scaena stat.\nPompeiani plaudunt.\n\nActius in scaena fabulam agit. fabula est scurrilis.\niuvenes rident et Actium laudant. senes non dormiunt.\nsenes quoque Actium laudant. sed pueri et puellae sunt perterriti.\nActius est personatus.\n\nsubito Pompeiani magnum clamorem audiunt.\nnuntius theatrum intrat. 'funambulus! funambulus adest!'\nclamat nuntius. 'funambulus est Prudens!'\n\nPompeiani Actium non spectant. omnes Pompeiani e theatro currunt et Prudentem spectant.\nnemo in theatro manet.\n\nActius tamen non est iratus. Actius quoque funambulum spectat.",
           english: "Today the Pompeians are at leisure. Many Pompeians are sitting in the theater.\nThe spectators are not making any noise.\nThe spectators are waiting for Actius. Hooray! At last, Actius stands on the stage.\nThe Pompeians applaud.\n\nActius performs a play on stage. The play is rude.\nThe young men laugh and praise Actius. The old men are not sleeping.\nThe old men also praise Actius. But the boys and girls are terrified.\nActius is wearing a mask.\n\nSuddenly the Pompeians hear a great shout.\nA messenger enters the theater. 'A tightrope walker! The tightrope walker is here!'\nshouts the messenger. 'The tightrope walker is Prudens!'\n\nThe Pompeians no longer watch Actius. All the Pompeians run out of the theater and watch Prudens.\nNo one remains in the theater.\n\nHowever, Actius is not angry. Actius also watches the tightrope walker.",
+        }
+      },
+      stage6: {
+        pugna: {
+          latin: "Clemens in foro ambulabat. turba maxima erat in foro.\nservi et ancillae cibum emebant. multi pistores panem vendebant.\npoeta recitabat.\n\nmercator Graecus contentionem cum agricola habebat.\nmercator iratus pecuniam postulabat. subito agricola mercatorem pulsavit, quod mercator agricolam vituperabat.\nPompeiani ridebant, et agricolam incitabant.\n\nClemens, postquam clamorem audivit, ad pugnam festinavit.\ntandem agricola mercatorem superavit et e foro agitavit.\nPompeiani agricolam fortem laudaverunt.",
+          english: "Clemens was walking in the forum. There was a very large crowd in the forum.\nSlaves and slave girls were buying food. Many bakers were selling bread.\nA poet was reciting.\n\nA Greek merchant was having an arguement with a farmer.\nThe angry merchant was demanding money. Suddenly the farmer punched the merchant, because the merchant had insulted the farmer.\nThe Pompeians laughed and encouraged the farmer.\n\nClemens, after hearing the noise, hurried to the fight.\nAt last the farmer defeated the merchant and drove him out of the forum.\nThe Pompeians praised the brave farmer.",
+        },
+        Felix: {
+          latin: "multi Pompeiani in taberna vinum bibebant. Clemens tabernam intravit.\nsubito Clemens 'Felix!' clamavit.\nClemens Felicem laete salutavit. Felix erat libertus.\n\nClemens Felicem ad villam invitavit. Clemens et Felix villam intraverunt.\nLucia in atrio stabat. Felix Luciam salutavit.\nClemens Caecilium et Metellam quaesivit. Caecilius in horto legebat.\nMetella in tablino scribebat. Caecilius et Metella ad atrium festinaverunt et Felicem salutaverunt.\n\npostquam Quintus atrium intravit, Felix iuvenem spectavit.\nlibertus erat valde commotus. paene lacrimabat; sed ridebat.\n\ntum Clemens ad culinam festinavit. Grumio in culina dormiebat.\nClemens coquum excitavit et totam rem narravit.\ncoquus, quod erat laetus, cenam optimam paravit.",
+          english: "Many Pompeians were drinking wine in the tavern. Clemens entered the tavern.\nSuddenly Clemens shouted, 'Felix!'\nClemens happily greeted Felix. Felix was a freedman.\n\nClemens invited Felix to the house. Clemens and Felix entered the house.\nLucia was standing in the atrium. Felix greeted Lucia.\nClemens looked for Caecilius and Metella. Caecilius was reading in the garden.\nMetella was writing in the study. Caecilius and Metella hurried to the atrium and greeted Felix.\n\nAfter Quintus entered the atrium, Felix looked at the young man.\nThe freedman was very moved. He was almost crying; but he was smiling.\n\nThen Clemens hurried to the kitchen. Grumio was sleeping in the kitchen.\nClemens woke the cook and told the whole story.\nThe cook, because he was happy, prepared an excellent dinner.",
+        },
+        Felixetfur: {
+          latin: "post cenam Lucia rogavit, 'pater, cur Felix nunc est libertus? olim erat servus tuus.'\ntum pater totam rem narravit.\n\nCaecilius: Felix olim in tablino scribebat. Felix erat solus.\nClemens et Grumio cibum in foro quaerebant.\nMetella aberat, quod sorrorem visitabat.\n\nFelix: pater tuus aberat, quod argentariam in foro administrabat.\n\nCaecilius: nemo erat in villa nisi Felix et infans. parvus infans in cubiculo dormiebat.\nsubito fur per ianuam intravit.\nfur tacite atrium circumspectavit;\ntacite cubiculum intravit, ubi infans erat. Felix nihil audivit, quod intente laborabat.\nfur parvum infantem e villa tacite portabat.\nsubito infans vagivit.\nFelix, postquam clamorem audivit, statim e tablino festinavit.\n\n'furcifer!' clamavit Felix iratus, et furm ferociter pulsavit.\nFelix furem paene necavit. ita Felix parvum infantem servavit.\n\nFelix: dominus, postquam rem audivit, erat laetus et me liberavit. ego igitur sum libertus.\n\nLucia: sed quis erat infans?\n\nCaecilius: erat Quintus!",
+          english: "After dinner, Lucia asked, 'Father, why is Felix now a freedman? Once he was your slave.'\nThen her father told the whole story.\n\nCaecilius: Felix was once writing in the study. Felix was alone.\nClemens and Grumio were looking for food in the forum.\nMetella was away because she was visiting her sister.\n\nFelix: Your father was away because he was managing the banker's stall in the forum.\n\nCaecilius: No one was in the house except Felix and the baby. The small baby was sleeping in the bedroom.\nSuddenly a thief entered through the door.\nThe thief quietly looked around the atrium;\nhe quietly entered the bedroom where the baby was. Felix heard nothing because he was working intently.\nThe thief quietly carried the small baby out of the house.\nSuddenly, the baby cried.\n\nFelix, after hearing the shout, immediately hurried from the study.\n\n'Scoundrel!' shouted Felix angrily, and he fiercely punched the thief.\nFelix almost killed the thief. In this way, Felix saved the small baby.\n\nFelix: The master, after he heard the story, was happy and freed me. So I am a freedman.\n\nLucia: But who was the baby?\n\nCaecilius: It was Quintus!",
+        },
+        avarus: {
+          latin: "duo fures olim ad villam contendebant. in villa mercator habitabat.\nmercator erat senex et avarus. avarus multam pecuniam habebat.\nfures, postquam villam intraverunt, atrium circumspectaverunt.\n\n'avarus.' inquit fur, 'est solus. avarus servum non habet.'\n\ntum fures tablinum intraverunt. avarus clamavit et ferociter pugnavit, sed fures senem facile superaverunt.\n\n'ubi est pecunia, senex?' rogavit fur.\n'servus fidelis pecuniam in cubiculo custodit.' inquit senex.\n'tu servum fidelem non habes, quod avarus es.'\nclamavit fur. tum fures cubiculum petiverunt.\n\n'pecuniam video.' inquit fur. fures cubiculum intraverunt ubi pecunia erat, et pecuniam intente spectaverunt.\nsed eheu! ingens serpens in pecunia iacebat.\nfures serpentem timebant et e villa celeriter festinaverunt.\n\nin villa avarus ridebat et serpentem laudabat.\n'tu es optimus servus. numquam dormis. pecuniam meam semper servas.'",
+          english: "Once, two thieves were hurrying to a house. A merchant lived in the house.\nThe merchant was an old man and a miser. The miser had much money.\nAfter the thieves entered the house, they looked around the atrium.\n\n'The miser,' said a thief, 'is alone. The miser does not have a slave.'\n\nThen the thieves entered the study. The miser shouted and fought fiercely, but the thieves easily overpowered the old man.\n\n'Where is the money, old man?' asked a thief.\n'A faithful slave guards the money in the bedroom.' said the old man.\n'You do not have a faithful slave, because you are a miser!'\nshouted the thief. Then the thieves made for the bedroom.\n\n'I see the money,' said a thief. The thieves entered the bedroom where the money was, and looked at the money intenly.\nBut oh no! A huge snake was lying on the money.\nThe thieves were afraid of the snake and quickly hurried out of the house.\n\nIn the house, the miser laughed and praised the snake.\n'You are the best slave. You never sleep. You always guard my money.'",
         }
       },
       stage13: {
